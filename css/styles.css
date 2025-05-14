@@ -71,11 +71,11 @@ nav a:hover {
   transition: filter 0.5s ease, opacity 0.5s ease;
 }
 
-.section.blur {
+/* .section.blur {
   filter: blur(4px);
   opacity: 0.5;
   pointer-events: none;
-}
+} */
 
 /* Projects */
 .projects {
