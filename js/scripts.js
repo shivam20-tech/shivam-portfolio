@@ -1,6 +1,11 @@
 // Blur effect on scroll
 const sections = document.querySelectorAll('.section');
+const toggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
 
+toggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
 function handleSectionFocus() {
   let currentSection = null;
 
