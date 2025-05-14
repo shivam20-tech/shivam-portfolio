@@ -35,9 +35,12 @@ header {
  
 }
 .logo a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: #fff;
 }
+/* text-decoration: none;
+    color: inherit;
+} */
 
 /* Hamburger */
 .menu-toggle {
