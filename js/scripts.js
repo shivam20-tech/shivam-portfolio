@@ -10,25 +10,26 @@ if (toggle && navbar) {
   });
 }
 
-// Add blur effect to sections not in focus
+// Add blur effect to non-focused sections
 function handleSectionFocus() {
   let currentSection = null;
 
-  sections.forEach((section) => {
+  sections.forEach(section => {
     const rect = section.getBoundingClientRect();
-    const isVisible =
-      rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+    const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
 
-    if (isVisible) {
-      currentSection = section;
-    }
+    if (isVisible) currentSection = section;
   });
 
-  sections.forEach((section) => {
-    section.classList.toggle('blur', section !== currentSection);
+  sections.forEach(section => {
+    if (currentSection) {
+      section.classList.toggle('blur', section !== currentSection);
+    } else {
+      section.classList.remove('blur'); // fallback: remove blur if none is focused
+    }
   });
 }
 
-// Run blur handler on scroll and on page load
+// Trigger on scroll and load
 window.addEventListener('scroll', handleSectionFocus);
 window.addEventListener('load', handleSectionFocus);

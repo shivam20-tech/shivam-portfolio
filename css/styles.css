@@ -223,10 +223,14 @@ section {
     align-items: center;
     width: 100%;
     padding: 1rem 0;
+    transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
   }
 
   nav.active {
     display: flex;
+    max-height: 500px;
   }
 
   nav a {
