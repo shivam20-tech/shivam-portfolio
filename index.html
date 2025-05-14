@@ -14,19 +14,18 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<header>
-  <div class="logo">Shivam Mistry</div>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger Icon -->
-  <nav id="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-
+  <header>
+    <div class="logo">Shivam Mistry</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <section id="home" class="section intro" data-aos="fade-in">
     <img src="assets/Profile.jpg" alt="Shivam Mistry" class="profile-pic" />
@@ -43,7 +42,6 @@
 
   <section id="projects" class="section projects" data-aos="fade-up">
     <h2>Projects</h2>
-
     <div class="project">
       <h3>Real Estate Website</h3>
       <p>This was a collaborative project during my BSc studies. It simulates a real estate listing platform with search and filtering features.</p>
@@ -54,35 +52,34 @@
 
   <section id="certificates" class="certificates section">
     <h2>Certificates</h2>
-  
     <div class="certificate">
       <img src="assets/logos/google.png" alt="Google Logo" />
       <div>
-      <h3><i class="fas fa-globe"></i> The Fundamentals of Digital Marketing</h3>
-      <p>Issued by Google Digital Garage – Covers core digital marketing skills like SEO, analytics, and more.</p>
-      <a href="assets/certificates/digitalgarage_certificate.pdf" target="_blank">View Certificate</a>
-    </div>
+        <h3><i class="fas fa-globe"></i> The Fundamentals of Digital Marketing</h3>
+        <p>Issued by Google Digital Garage – Covers core digital marketing skills like SEO, analytics, and more.</p>
+        <a href="assets/certificates/digitalgarage_certificate.pdf" target="_blank">View Certificate</a>
+      </div>
     </div>
   
     <div class="certificate">
-      <img src="assets/logos/great_leearning.png" alt="Great Learning Logo" />
-    <div>
-      <h3><i class="fas fa-chart-bar"></i> Power BI for Beginners</h3>
-      <p>Issued by Great Learning – Learned data visualization, dashboards, and report generation using Power BI.</p>
-      <a href="assets/certificates/power_bi.pdf" target="_blank">View Certificate</a>
-    </div>
+      <img src="assets/logos/great_learning.png" alt="Great Learning Logo" />
+      <div>
+        <h3><i class="fas fa-chart-bar"></i> Power BI for Beginners</h3>
+        <p>Issued by Great Learning – Learned data visualization, dashboards, and report generation using Power BI.</p>
+        <a href="assets/certificates/power_bi.pdf" target="_blank">View Certificate</a>
+      </div>
     </div>
   
     <div class="certificate">
       <img src="assets/logos/free_code_camp.png" alt="freeCodeCamp Logo" />
-    <div>
-      <h3><i class="fas fa-laptop-code"></i> Responsive Web Design</h3>
-      <p>Issued by freeCodeCamp – Built websites that adapt to screen sizes using Flexbox, Grid, and media queries.</p>
-      <a href="assets/certificates/Responsive_web_designing.pdf" target="_blank">View Certificate</a>
-    </div>
+      <div>
+        <h3><i class="fas fa-laptop-code"></i> Responsive Web Design</h3>
+        <p>Issued by freeCodeCamp – Built websites that adapt to screen sizes using Flexbox, Grid, and media queries.</p>
+        <a href="assets/certificates/Responsive_web_designing.pdf" target="_blank">View Certificate</a>
+      </div>
     </div>
   </section>
-  
+
   <section id="contact" class="section contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <div class="social-icons">
@@ -104,12 +101,41 @@
     AOS.init({ once: true, duration: 800 });
   </script>
   <script>
-    navbar.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navbar.classList.remove('active');
-  });
-});
+    // Select elements
+    const sections = document.querySelectorAll('.section');
+    const toggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    // Toggle mobile menu visibility
+    if (toggle && navbar) {
+      toggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+    }
+
+    // Add blur effect to non-focused sections
+    function handleSectionFocus() {
+      let currentSection = null;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+
+        if (isVisible) currentSection = section;
+      });
+
+      sections.forEach(section => {
+        if (currentSection) {
+          section.classList.toggle('blur', section !== currentSection);
+        } else {
+          section.classList.remove('blur'); // fallback: remove blur if none is focused
+        }
+      });
+    }
+
+    // Trigger on scroll and load
+    window.addEventListener('scroll', handleSectionFocus);
+    window.addEventListener('load', handleSectionFocus);
   </script>
-  <script src="js/scripts.js"></script>
 </body>
 </html>
