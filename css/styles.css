@@ -18,18 +18,24 @@ body {
 
 /* Sticky Header */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #1e1e1e;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 nav {
-  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
@@ -188,16 +194,39 @@ section {
   margin: 0;
   color: #555;
 }
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
 /* Responsive */
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
   }
 
-  .intro h2 {
-    font-size: 1.5rem;
+  nav.active {
+    display: flex;
   }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+
   .certificate {
     flex-direction: column;
     text-align: center;
@@ -208,3 +237,4 @@ section {
     margin-bottom: 0.5rem;
   }
 }
+
