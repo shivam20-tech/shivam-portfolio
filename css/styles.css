@@ -185,12 +185,28 @@ footer {
 section {
   scroll-margin-top: 100px;
 }
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #555;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+.profile-pic {
+  width: 140px;
+  height: 140px;
+}
 
   nav {
     display: none;
