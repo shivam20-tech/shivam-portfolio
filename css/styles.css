@@ -60,28 +60,7 @@ nav a:hover {
   color: #f39c12;
 }
 
-/* Intro */
-.intro {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #fff;
-}
-
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #555;
-  margin-bottom: 1rem;
-}
-
-.intro h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Section */
+/* Sections */
 .section {
   padding: 2.5rem 1rem;
   max-width: 900px;
@@ -214,27 +193,37 @@ section {
   }
 
   nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
     background: #111;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 1rem 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
   }
 
   nav.active {
-    visibility: visible;
-    opacity: 1;
+    display: flex;
+    max-height: 500px;
   }
 
   nav a {
     margin: 1rem 0;
     font-size: 1.1rem;
+  }
+
+  .certificate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .certificate img {
+    margin-bottom: 0.5rem;
   }
 }
