@@ -205,32 +205,6 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-/* Collapsible container */
-.collapsible {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-.collapsible.open {
-  max-height: 2000px; /* Adjust based on content */
-}
-
-.cert-toggle {
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cert-toggle i {
-  transition: transform 0.3s;
-}
-
-.cert-toggle.open i {
-  transform: rotate(180deg);
-}
 
 
 /* Responsive Design */
