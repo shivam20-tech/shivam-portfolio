@@ -51,43 +51,48 @@
   </section>
 
   <section id="certificates" class="certificates section">
-    <h2>Certificates</h2>
+  <h2 onclick="toggleCertificates()" class="cert-toggle">
+    Certificates <i class="fas fa-chevron-down"></i>
+  </h2>
+  <div id="certificates-content" class="collapsible">
     <div class="certificate">
       <img src="assets/logos/google.png" alt="Google Logo" />
       <div>
         <h3><i class="fas fa-globe"></i> The Fundamentals of Digital Marketing</h3>
-        <p>Issued by Google Digital Garage – Covers core digital marketing skills like SEO, analytics, and more.</p>
+        <p>Issued by Google Digital Garage – Covers SEO, analytics, and more.</p>
         <a href="assets/certificates/digitalgarage_certificate.pdf" target="_blank">View Certificate</a>
       </div>
     </div>
-  
+
     <div class="certificate">
       <img src="assets/logos/great_leearning.png" alt="Great Learning Logo" />
       <div>
         <h3><i class="fas fa-chart-bar"></i> Power BI for Beginners</h3>
-        <p>Issued by Great Learning – Learned data visualization, dashboards, and report generation using Power BI.</p>
+        <p>Issued by Great Learning – Data visualization, dashboards, and reports.</p>
         <a href="assets/certificates/power_bi.pdf" target="_blank">View Certificate</a>
       </div>
     </div>
-  
+
     <div class="certificate">
       <img src="assets/logos/free_code_camp.png" alt="freeCodeCamp Logo" />
       <div>
         <h3><i class="fas fa-laptop-code"></i> Responsive Web Design</h3>
-        <p>Issued by freeCodeCamp – Built websites that adapt to screen sizes using Flexbox, Grid, and media queries.</p>
+        <p>Issued by freeCodeCamp – Flexbox, Grid, and responsive layouts.</p>
         <a href="assets/certificates/Responsive_web_designing.pdf" target="_blank">View Certificate</a>
       </div>
     </div>
-    <div class="certificate">
-  <img src="assets/logos/coursera.png" alt="Coursera Logo" />
-  <div>
-    <h3><i class="fas fa-briefcase"></i> Business Analysis & Process Management</h3>
-    <p>Issued by Coursera – Covered core topics in business analysis, modeling, and process improvement.</p>
-    <a href="assets/certificates/business_analysis_certificate.pdf" target="_blank">View Certificate</a>
-  </div>
-</div>
 
-  </section>
+    <div class="certificate">
+      <img src="assets/logos/coursera.png" alt="Coursera Logo" />
+      <div>
+        <h3><i class="fas fa-briefcase"></i> Business Analysis & Process Management</h3>
+        <p>Issued by Coursera – Business modeling and process improvement.</p>
+        <a href="assets/certificates/business_analysis_certificate.pdf" target="_blank">View Certificate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <section id="contact" class="section contact" data-aos="fade-up">
     <h2>Contact Me</h2>
@@ -122,5 +127,15 @@
       });
     }  
   </script>
+  <script>
+  function toggleCertificates() {
+    const content = document.getElementById('certificates-content');
+    const toggle = document.querySelector('.cert-toggle');
+
+    content.classList.toggle('open');
+    toggle.classList.toggle('open');
+  }
+</script>
+
 </body>
 </html>
