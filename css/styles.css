@@ -67,6 +67,34 @@ nav a {
 nav a:hover {
   color: #f39c12;
 }
+/* Home Section */
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensures it wraps on smaller screens */
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.intro-text h2 {
+  margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
 /* Sections */
 .section {
