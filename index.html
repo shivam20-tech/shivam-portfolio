@@ -51,31 +51,52 @@
   </section>
 
   <section id="projects" class="section projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Real Estate Website</h3>
-      <p>This was a collaborative project during my BSc studies. It simulates a real estate listing platform with search
-        and filtering features.</p>
-      <p><strong>Tech Used:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
-      <p><em>Note: Currently hosted on localhost.</em></p>
+  <h2>Projects</h2>
+
+  <!-- Real Estate -->
+  <div class="project-card">
+    <div class="project-card__media">
+      <img src="assets/real_estate_preview.jpg" alt="Real Estate Preview" class="project-img">
     </div>
 
-    <div class="project">
-      <h3>Task Manager Web App (Django)</h3>
-      <p>
-        A full-stack task management application built using Django.
-        Users can create tasks, mark them completed, delete tasks, and view task details.
+    <div class="project-card__body">
+      <h3 class="project-title">Real Estate Website</h3>
+      <p class="project-desc">
+        A collaborative project from my BSc studies that simulates a real estate listing platform with search
+        and filtering features.
       </p>
-      <p><strong>Tech Used:</strong> Django, Python, SQLite, HTML Templates</p>
-      <img src="assets/taskmanger1.jpg" class="project-img" alt="Task Manager Screenshot" />
-      <img src="assets/taskmanger2.jpg" class="project-img" alt="Task Manager Screenshot" />
-
-      <!-- Link to GitHub -->
-      <a href="https://github.com/shivam20-tech/shivam20-tech-taskmanager" target="_blank">
-        🔗 View Source Code on GitHub
-      </a>
+      <p class="project-tech"><strong>Tech Used:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
+      <p class="project-note"><em>Note: Currently hosted on localhost.</em></p>
     </div>
-  </section>
+  </div>
+
+  <!-- Task Manager -->
+  <div class="project-card">
+    <div class="project-card__media">
+      <!-- show first screenshot as main -->
+      <img src="assets/taskmanger1.jpg" alt="Task Manager screenshot 1" class="project-img">
+      <!-- small secondary screenshot -->
+      <img src="assets/taskmanger2.jpg" alt="Task Manager screenshot 2" class="project-img--small">
+    </div>
+
+    <div class="project-card__body">
+      <h3 class="project-title">Task Manager Web App (Django)</h3>
+      <p class="project-desc">
+        A full-stack task management application built with Django. Users can create tasks, mark them completed,
+        delete tasks, and view task details.
+      </p>
+      <p class="project-tech"><strong>Tech Used:</strong> Django, Python, SQLite, HTML Templates</p>
+
+      <div class="project-links">
+        <a href="https://github.com/shivam20-tech/shivam20-tech-taskmanager" target="_blank" class="btn-link">🔗 View Source Code</a>
+        <!-- optional demo link -->
+        <!-- <a href="https://your-demo.example" target="_blank" class="btn-link">🚀 Live Demo</a> -->
+      </div>
+    </div>
+  </div>
+
+</section>
+
 
   <section id="certificates" class="certificates section">
     <h2 onclick="toggleCertificates()" class="cert-toggle">
